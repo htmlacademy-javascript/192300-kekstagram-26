@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 /**
  * @param {number} min;
  * @param {number} max;
@@ -29,7 +27,7 @@ const ARRAY_OF_MESSAGE = ['Всё отлично!','В целом всё неп�
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'];
 const ARRAY_OF_DESCRIPTION = ['Summer!','Мое любимое фото!','Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.','Обожаю пляж'];
 const MIN_USER = 1;
-const MAX_USER = 2;
+const MAX_USER = 3;
 const ARRAY_WITHOUT_REPETITION = [];
 const getRandomElement = function (array){
   return getRandomInt(0, array.length - 1);
@@ -37,7 +35,7 @@ const getRandomElement = function (array){
 
 function getArrayWithoutRepetition(min, max){
   let index = 1;
-  while(ARRAY_WITHOUT_REPETITION.includes(index)){
+  if(ARRAY_WITHOUT_REPETITION.includes(index)){
     index = getRandomInt(min, max);
   }
   ARRAY_WITHOUT_REPETITION.push(index);
@@ -63,10 +61,8 @@ function generateComment(){
   };
 }
 function generateUsersProfiles(countUsers){
-  //return Array.from({length:countUsers}, generateUser);
+  return Array.from({length:countUsers}, generateUser);
 }
 
 // eslint-disable-next-line no-console
-//console.log(generateUsersProfiles(MAX_USER));
-
->>>>>>> Stashed changes
+console.log(generateUsersProfiles(MAX_USER));
